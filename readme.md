@@ -18,4 +18,4 @@ Features implemented: 0%
 
 ## Tech
 
-It will be compiled to HTML+CSS+JS, not sure now what exact tech will be used for development. Probably node js and sass/less.
+It will be compiled to HTML+CSS+JS, not sure now what exact tech will be used for development. Probably node js and sass/less. Use web components
