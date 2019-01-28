@@ -5,10 +5,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>Bookmarks</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-        <script src="script.js" defer></script>
+        <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+        <script src="js/script.js" defer></script>
+        <script src="js/selection.js" defer></script>
     </head>
     <body>
+        <div class="icon-link" ondblclick="openInNewTab('about:blank')" ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" draggable="true">
+            <div class="icon"><img src="facebook.png" alt="" /></div>
+            <div class="text">facebook.com</div>
+        </div>
         <div class="icon-link" ondblclick="openInNewTab('about:blank')" ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" draggable="true">
             <div class="icon"><img src="facebook.png" alt="" /></div>
             <div class="text">facebook.com</div>
