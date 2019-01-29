@@ -2,6 +2,7 @@ body = document.querySelector("body");
 icons = document.querySelectorAll(".icon-link");
 
 selectedArea = {};
+selectedIcons = new Set();
 
 body.addEventListener("poinerdown", drawRectangleStart);
 body.addEventListener("mousedown", drawRectangleStart);
@@ -54,7 +55,8 @@ function collideAll() {
     icons.forEach(icon => {
         if (rectCollision(icon.getBoundingClientRect(), selectedAreaDiv.getBoundingClientRect())) {
             icon.classList.add("selected");
-        }else{
+            // selectedIcons.add(icon);
+        } else {
             icon.classList.remove("selected");
         }
     });
