@@ -16,6 +16,8 @@ function onDragStart(event) {
     console.log(event);
     offsetX = event.offsetX;
     offsetY = event.offsetY;
+    eventX = event.x;
+    eventY = event.y;
 }
 
 function onDragEnd(event) {
@@ -32,5 +34,17 @@ function onDragEnd(event) {
     }
     event.target.style.top = top + "px";
     event.target.style.left = left + "px";
+
+    deltaOffset = {
+        x: event.x - eventX,
+        y: event.y - eventY
+    }
+    
 }
 
+function debugLoop() {
+    setInterval(() => {
+        console.log(areWeDragging);
+    }, 500);
+}
+// debugLoop()

@@ -23,7 +23,7 @@ body {
     height: 80px;
 }
 
-.icon-link:hover, .icon-link.selected {
+.icon-link:hover, .icon-link.selected, .icon-link.selected-group {
     background-color: rgba(82, 100, 82, 0.705);
     border-color: rgba(110, 128, 110, 0.705);
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.69);
@@ -55,4 +55,8 @@ img {
 .hidden {
     display: none;
     visibility: hidden;
+}
+
+*{
+    cursor: default;
 }
