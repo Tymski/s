@@ -21,9 +21,14 @@ body {
     max-height: 120px;
     width: 120px;
     height: 80px;
+    position: absolute;
+    top:0px;
+    left:0px;
 }
 
-.icon-link:hover, .icon-link.selected, .icon-link.selected-group {
+.icon-link:hover,
+.icon-link.selected,
+.icon-link.selected-group {
     background-color: rgba(82, 100, 82, 0.705);
     border-color: rgba(110, 128, 110, 0.705);
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.69);
@@ -57,6 +62,6 @@ img {
     visibility: hidden;
 }
 
-*{
+* {
     cursor: default;
 }

@@ -4,11 +4,11 @@ icons = document.querySelectorAll(".icon-link");
 selectedArea = {};
 selectedIcons = new Set();
 
-body.addEventListener("poinerdown", bodyMouseDown);
+// body.addEventListener("poinerdown", bodyMouseDown);
 body.addEventListener("mousedown", bodyMouseDown);
-body.addEventListener("poinermove", drawRectangleMove);
+// body.addEventListener("poinermove", drawRectangleMove);
 body.addEventListener("mousemove", drawRectangleMove);
-body.addEventListener("pointerup", drawRectangleEnd);
+// body.addEventListener("pointerup", drawRectangleEnd);
 body.addEventListener("mouseup", drawRectangleEnd);
 body.addEventListener("onblur", drawRectangleCancel);
 
@@ -18,7 +18,7 @@ function bodyMouseDown(event) {
     selectedArea.active = true;
     if (document.querySelector(".icon-link:hover") === null) {
         selectedIcons = new Set();
-    } else{
+    } else {
         selectedArea.active = false;
     }
     applySelectedGroupStyle();
@@ -42,6 +42,28 @@ function drawRectangleMove(event) {
     }
 }
 
+function drawRectangleEnd(event) {
+    // accept selection
+
+    selectedIcons = collideAll();
+    applySelectedGroupStyle();
+    selectedArea.active = false;
+}
+
+function drawRectangleCancel(event) {
+    selectedArea.active = false;
+}
+
+function applySelectedGroupStyle() {
+    icons.forEach(icon => {
+        if (selectedIcons.has(icon)) {
+            icon.classList.add("selected-group");
+        } else {
+            icon.classList.remove("selected-group");
+        }
+    });
+}
+
 function collideAll() {
     var collidedIcons = new Set();
     function rectCollision(rect1, rect2) {
@@ -59,28 +81,4 @@ function collideAll() {
         }
     });
     return collidedIcons;
-}
-
-function drawRectangleEnd(event) {
-    // accept selection
-
-    selectedIcons = collideAll();
-
-    applySelectedGroupStyle();
-
-    selectedArea.active = false;
-}
-
-function drawRectangleCancel(event) {
-    selectedArea.active = false;
-}
-
-function applySelectedGroupStyle() {
-    icons.forEach(icon => {
-        if (selectedIcons.has(icon)) {
-            icon.classList.add("selected-group");
-        } else {
-            icon.classList.remove("selected-group");
-        }
-    });
 }
