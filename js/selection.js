@@ -71,10 +71,14 @@ function collideAll() {
         if (rect1.top > rect2.bottom || rect2.top > rect1.bottom) return false;
         return true;
     }
+    selectedRect = selectedAreaDiv.getBoundingClientRect();
     icons.forEach(icon => {
-        if (rectCollision(icon.getBoundingClientRect(), selectedAreaDiv.getBoundingClientRect())) {
-            icon.classList.add("selected");
-            collidedIcons.add(icon);
+        if (rectCollision(icon.getBoundingClientRect(), selectedRect)) {
+            if (selectedRect.width == 0 && selectedRect.height == 0 && selectedRect.x == 0 && selectedRect.y == 0 && selectedRect.top == 0 && selectedRect.left == 0) {
+            } else {
+                icon.classList.add("selected");
+                collidedIcons.add(icon);
+            }
         } else {
             icon.classList.remove("selected");
             collidedIcons.delete(icon);
