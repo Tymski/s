@@ -13,7 +13,6 @@ function openInNewTab(url) {
 }
 
 function onDragStart(event) {
-    console.log(event);
     offsetX = event.offsetX;
     offsetY = event.offsetY;
     eventX = event.x;
@@ -26,14 +25,12 @@ function onDragStart(event) {
 }
 
 function onDragEnd(event) {
-    console.log(event.x, event.y);
     event.target.style.position = "absolute";
 
     deltaOffset = {
         x: event.x - eventX,
         y: event.y - eventY
     };
-    console.log(deltaOffset);
 
     icons.forEach(icon => {
         if (selectedIcons.has(icon)) {
