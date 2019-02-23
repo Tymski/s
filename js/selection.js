@@ -13,6 +13,7 @@ body.addEventListener("mouseup", drawRectangleEnd);
 body.addEventListener("onblur", drawRectangleCancel);
 
 function bodyMouseDown(event) {
+    icons = document.querySelectorAll(".icon-link");
     selectedArea.x = event.x;
     selectedArea.y = event.y;
     selectedArea.active = true;

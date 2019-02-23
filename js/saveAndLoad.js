@@ -10,3 +10,6 @@ function load(){
     body.innerHTML = payload;
     return payload;
 }
+
+// window.onbeforeunload = save;
+// window.onloadend = load;
