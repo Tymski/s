@@ -1,14 +1,17 @@
-
-
-function save(){
-    var payload = body.innerHTML;
-    localStorage.setItem("state",payload);
+function save() {
+    localStorage.setItem(savePath(), body.innerHTML);
 }
 
-function load(){
-    var payload = localStorage.getItem("state");
-    body.innerHTML = payload;
-    return payload;
+function load() {
+    body.innerHTML = localStorage.getItem(savePath());
+}
+
+function getPath() {
+    return new URLSearchParams(location.search).get("path");
+}
+
+function savePath() {
+    return "state" + getPath();
 }
 
 // window.onbeforeunload = save;
