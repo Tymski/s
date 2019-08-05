@@ -1,23 +1,23 @@
-body = document.querySelector("body");
-icons = document.querySelectorAll(".icon-link");
+body = document.querySelector('body');
+icons = document.querySelectorAll('.icon-link');
 
 selectedArea = {};
 selectedIcons = new Set();
 
 // body.addEventListener("poinerdown", bodyMouseDown);
-body.addEventListener("mousedown", bodyMouseDown);
+body.addEventListener('mousedown', bodyMouseDown);
 // body.addEventListener("poinermove", drawRectangleMove);
-body.addEventListener("mousemove", drawRectangleMove);
+body.addEventListener('mousemove', drawRectangleMove);
 // body.addEventListener("pointerup", drawRectangleEnd);
-body.addEventListener("mouseup", drawRectangleEnd);
-body.addEventListener("onblur", drawRectangleCancel);
+body.addEventListener('mouseup', drawRectangleEnd);
+body.addEventListener('onblur', drawRectangleCancel);
 
 function bodyMouseDown(event) {
-    icons = document.querySelectorAll(".icon-link");
+    icons = document.querySelectorAll('.icon-link');
     selectedArea.x = event.x;
     selectedArea.y = event.y;
     selectedArea.active = true;
-    if (document.querySelector(".icon-link:hover") === null) {
+    if (document.querySelector('.icon-link:hover') === null) {
         selectedIcons = new Set();
     } else {
         selectedArea.active = false;
@@ -30,14 +30,14 @@ function drawRectangleMove(event) {
     selectedArea.height = event.y - selectedArea.y;
     setSelectedAreaDiv();
     function setSelectedAreaDiv() {
-        selectedAreaDiv.style.width = Math.abs(selectedArea.width) + "px";
-        selectedAreaDiv.style.height = Math.abs(selectedArea.height) + "px";
-        selectedAreaDiv.style.left = selectedArea.x - Math.abs(selectedArea.width) / 2 + selectedArea.width / 2 + "px";
-        selectedAreaDiv.style.top = selectedArea.y - Math.abs(selectedArea.height) / 2 + selectedArea.height / 2 + "px";
+        selectedAreaDiv.style.width = Math.abs(selectedArea.width) + 'px';
+        selectedAreaDiv.style.height = Math.abs(selectedArea.height) + 'px';
+        selectedAreaDiv.style.left = selectedArea.x - Math.abs(selectedArea.width) / 2 + selectedArea.width / 2 + 'px';
+        selectedAreaDiv.style.top = selectedArea.y - Math.abs(selectedArea.height) / 2 + selectedArea.height / 2 + 'px';
         if (selectedArea.active) {
-            selectedAreaDiv.classList.remove("hidden");
+            selectedAreaDiv.classList.remove('hidden');
         } else {
-            selectedAreaDiv.classList.add("hidden");
+            selectedAreaDiv.classList.add('hidden');
         }
         collideAll();
     }
@@ -58,9 +58,9 @@ function drawRectangleCancel(event) {
 function applySelectedGroupStyle() {
     icons.forEach(icon => {
         if (selectedIcons.has(icon)) {
-            icon.classList.add("selected-group");
+            icon.classList.add('selected-group');
         } else {
-            icon.classList.remove("selected-group");
+            icon.classList.remove('selected-group');
         }
     });
 }
@@ -77,11 +77,11 @@ function collideAll() {
         if (rectCollision(icon.getBoundingClientRect(), selectedRect)) {
             if (selectedRect.width == 0 && selectedRect.height == 0 && selectedRect.x == 0 && selectedRect.y == 0 && selectedRect.top == 0 && selectedRect.left == 0) {
             } else {
-                icon.classList.add("selected");
+                icon.classList.add('selected');
                 collidedIcons.add(icon);
             }
         } else {
-            icon.classList.remove("selected");
+            icon.classList.remove('selected');
             collidedIcons.delete(icon);
         }
     });

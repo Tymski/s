@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Bookmarks</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
-        <script src="js/script.js" defer></script>
-        <script src="js/selection.js" defer></script>
-        <script src="js/saveAndLoad.js" defer></script>
-    </head>
-    <body>
-        <div class="icon-link" data-link="about:blank" ondblclick="openInNewTab('about:blank')" ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" draggable="true">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Bookmarks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+    <script src="js/selection.js" defer></script>
+    <script src="js/saveAndLoad.js" defer></script>
+    <script src="js/link.js" defer></script>
+    <script src="js/drop.js" defer></script>
+</head>
+
+<body ondrop="drop(event)" ondragover="allowDrop(event)">
+    <!-- <div class="icon-link" data-link="about:blank" ondblclick="openInNewTab('about:blank')" ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" draggable="true">
             <div class="icon"><div class="iconCell"><img src="youtube.png" alt="" draggable="false" /></div></div>
             <div class="text">youtube.com</div>
         </div>
         <div class="icon-link" ondblclick="openInNewTab('about:blank')" ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" draggable="true">
             <div class="icon"><div class="iconCell"><img src="facebook.png" alt="" draggable="false" /></div></div>
             <div class="text">facebook.com</div>
-        </div>
-        <div id="selectedAreaDiv"></div>
-    </body>
+        </div> -->
+    <div id="selectedAreaDiv"></div>
+</body>
+
 </html>
