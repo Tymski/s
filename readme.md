@@ -22,6 +22,9 @@ It will be compiled to HTML+CSS+JS, not sure now what exact tech will be used fo
 
 ## TODO
 
+* Add Terms of Use, Privacy Policy, Cookie Policy, License
+* Use Firebase to store everything, use Firebase login with Whatever
+* Make a notification popup style with terms, policy accept button
 * Refactor everything
 * Define custom elements for icons '\<icon>example.com\</icon>' and folders
 * Create classes for
@@ -41,3 +44,5 @@ It will be compiled to HTML+CSS+JS, not sure now what exact tech will be used fo
   * Or maybe use Prefixed localStorage, where each Folder path is a prefix to starage - each icon in localstorage has a prefix with its path
 * Add default icon when favicon isn't found
 * In context menu on right clicking icon: Add custom icon, that will let user upload an icon and it will be encoded to string and saved in localDB
+* Make it work on mobile
+* Remove third party icons from repo history

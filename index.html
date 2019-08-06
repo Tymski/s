@@ -7,11 +7,13 @@
     <title>Bookmarks</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/contextMenu.css" />
     <script src="js/script.js" defer></script>
     <script src="js/selection.js" defer></script>
     <script src="js/saveAndLoad.js" defer></script>
     <script src="js/link.js" defer></script>
     <script src="js/drop.js" defer></script>
+    <script src="js/contextMenu.js" defer></script>
 </head>
 
 <body ondrop="drop(event)" ondragover="allowDrop(event)">
@@ -24,6 +26,15 @@
             <div class="text">facebook.com</div>
         </div> -->
     <div id="selectedAreaDiv"></div>
+    <div class="context-menu" id="contextMenu">
+        <div class="options">
+            <div class="option">Open in new tab</div>
+            <div class="option">Add New Link</div>
+            <div class="option">Add New Folder</div>
+            <div class="option">Delete</div>
+            <div class="option">Option5</div>
+        </div>
+    </div>
 </body>
 
 </html>
